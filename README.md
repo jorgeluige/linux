@@ -19,6 +19,52 @@ set incsearch
 set ignorecase
 set smartcase
 
+
+# Atualização do Linux. 
+
+Subir pra root
+sudo su -
+
+Atualiza os respos:
+apt update
+
+verifica se tem pacotes para atualizar
+apt install
+
+Atualiza os pacotes. 
+apt upgrade -y 
+
+Verificar os arquivos do /boot
+ls -lha /boot
+
+Verificar o tamanho de cada arquivo e o somatorio de todos os arquivos.
+du -shc /boot/*
+
+Dá um reboot para carregar o novo kernel
+reboot 
+
+Verificar a versao do kernel
+uname -r
+
+Se quiser verificar todas as informacoes
+uname -a
+
+Verificar quais kernels tem instalados
+dpkg --list |grep linux-image
+
+removendo o kernel antigo
+apt remove linux-image-5.10.0-12-amd64     //aqui e um boa deixar os dois ultimos, o que ta carregando e o anterior, o resto mata. 
+
+dando um puge no kenel antigo, pois mesmo dando remove ainda ficam arquivos de configuracao
+apt purge linux-image-5.10.0-12-amd64
+
+limpando temporarios/cache e etc
+apt autoclean 
+apt autopurge
+apt autoremove
+apt clean
+
+
 color murphy
 
 
